@@ -1,0 +1,94 @@
+FRAMEWORKS <- c("almond", "classless", "sakura")
+
+#' Run classless Example App
+#'
+#' @description
+#' Test out the classless CSS frameworks. It is a kitchen sink of all of the HTML tags available.
+#'
+#' All applications use the same R code, with the exception of the outer "page" function call.
+#'
+#' @param framework The name of the framework to
+#' @param ... Arguments to pass to the relevant page
+#'
+#' @importFrom tools toTitleCase
+#'
+#' @name runClasslessExample
+#' @rdname runClasslessExample
+#'
+#' @export
+runClasslessExample <- function(framework, ...) {
+  UseMethod("runClasslessExample")
+}
+
+#' @rdname runClasslessExample
+#' @export
+runClasslessExample.default <- function(framework = FRAMEWORKS, ...) {
+  framework <- match.arg(framework)
+  r6_class <- get(paste0(tools::toTitleCase(framework), "CSS"))
+
+  framework_obj <- r6_class$new()
+
+  shiny::shinyApp(
+    ui = framework_obj$createPage(
+      title = paste("Example", framework, "Application"),
+      exampleUI(framework_obj),
+      ...
+    ),
+    server = function(input, output) {}
+  )
+}
+
+#' @rdname runClasslessExample
+runClasslessExample.Classless <- function(framework, ...) {
+  shiny::shinyApp(
+    ui = framework$createPage(
+      title = paste("Example", framework$getFramework(), "Application"),
+      exampleUI(framework),
+      ...
+    ),
+    server = function(input, output) {
+      observeEvent(input$text, print(input$text))
+      observeEvent(input$number, print(input$number))
+      observeEvent(input$email, print(input$email))
+      observeEvent(input$password, print(input$password))
+      observeEvent(input$date, print(input$date))
+      observeEvent(input$textarea, print(input$textarea))
+    }
+  )
+}
+
+#' @param framework \code{classless} object
+#' @noRd
+exampleUI <- function(framework) {
+  tags$body(
+    tags$header(
+      tags$h1(paste0(tools::toTitleCase(framework$getFramework()), ".CSS Kitchen Sink"))
+    ),
+    tags$main(
+      tags$section(
+        tags$h2("Typeography")
+      ),
+      tags$section(
+        tags$h2("Inputs"),
+        tags$form(
+          framework$textInput("text", "Text Input"),
+          framework$numericInput("number", "Numeric Input"),
+          framework$passwordInput("password", "Password Input"),
+          framework$dateInput("date", "Date Input"),
+          framework$textAreaInput("textarea", "Text Area Input")
+        )
+
+      ),
+      tags$section(
+        tags$h2("Images")
+      )
+    ),
+    tags$footer(
+      tags$hr(),
+      tags$p(
+        "Source code available on",
+        tags$a(href = "https://github.com/ashbaldry/classless", target = "_blank", "GitHub")
+      )
+    )
+  )
+}

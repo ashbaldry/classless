@@ -1,0 +1,7 @@
+^\.git$
+^\.github$
+^.*\.Rproj$
+^\.Rproj\.user$
+_\.new\.png$
+^LICENSE\.md$
+^CODE_OF_CONDUCT\.md$

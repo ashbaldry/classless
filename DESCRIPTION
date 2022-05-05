@@ -1,0 +1,22 @@
+Package: classless
+Type: Package
+Title: Include Classless CSS Frameworks in 'Shiny' Applications
+Version: 0.1.0
+Authors@R: person('Ashley', 'Baldry', email = 'arbaldry91@gmail.com', role = c('cre', 'aut'))
+Description: Allows shiny developers to use classless CSS frameworks, 
+    such as 'sakura.css' and 'almond.css', in their applications.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: en-GB
+URL: https://github.com/ashbaldry/classless
+BugReport: https://github.com/ashbaldry/classless/issues
+Imports:
+    htmltools,
+    shiny,
+    sass,
+    R6
+Suggests: 
+    shinytest2,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+RoxygenNote: 7.1.2
