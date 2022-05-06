@@ -46,14 +46,7 @@ runClasslessExample.Classless <- function(framework, ...) {
       exampleUI(framework),
       ...
     ),
-    server = function(input, output) {
-      observeEvent(input$text, print(input$text))
-      observeEvent(input$number, print(input$number))
-      observeEvent(input$email, print(input$email))
-      observeEvent(input$password, print(input$password))
-      observeEvent(input$date, print(input$date))
-      observeEvent(input$textarea, print(input$textarea))
-    }
+    server = exampleServer
   )
 }
 
@@ -66,8 +59,10 @@ exampleUI <- function(framework) {
     ),
     tags$main(
       tags$section(
-        tags$h2("Typeography")
+        tags$h2("Typeography"),
+
       ),
+
       tags$section(
         tags$h2("Inputs"),
         tags$form(
@@ -76,9 +71,20 @@ exampleUI <- function(framework) {
           framework$passwordInput("password", "Password Input"),
           framework$dateInput("date", "Date Input"),
           framework$textAreaInput("textarea", "Text Area Input")
-        )
+        ),
 
+        tags$aside(
+          tags$h3("Input values:"),
+          tags$ul(
+            tags$li("Text:", textOutput("text", inline = TRUE)),
+            tags$li("Number:", textOutput("number", inline = TRUE)),
+            tags$li("Password:", textOutput("password", inline = TRUE)),
+            tags$li("Date:", textOutput("date", inline = TRUE)),
+            tags$li("Text Area:", textOutput("textarea", inline = TRUE))
+          )
+        )
       ),
+
       tags$section(
         tags$h2("Images")
       )
@@ -91,4 +97,13 @@ exampleUI <- function(framework) {
       )
     )
   )
+}
+
+#' @noRd
+exampleServer <- function(input, output) {
+  output$text <- renderText(input$text)
+  output$number <- renderText(input$number)
+  output$password <- renderText(input$password)
+  output$date <- renderText(as.character(input$date))
+  output$textarea <- renderText(input$textarea)
 }
