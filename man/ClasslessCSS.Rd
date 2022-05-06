@@ -4,9 +4,7 @@
 \alias{ClasslessCSS}
 \title{Classless.CSS}
 \description{
-Classless.CSS
-
-Classless.CSS
+A ...
 }
 \seealso{
 \code{\link{classlessPage}}, \code{\link{listClasslessThemes}}

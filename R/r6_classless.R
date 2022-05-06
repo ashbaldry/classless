@@ -1,5 +1,8 @@
 #' Classless.CSS
 #'
+#' @description
+#' A ...
+#'
 #' @export
 ClasslessCSS <- R6::R6Class(
   classname = "ClasslessCSS",
