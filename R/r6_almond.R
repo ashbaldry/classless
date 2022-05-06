@@ -121,6 +121,22 @@ AlmondCSS <- R6::R6Class(
         inline
       )
     },
+
+    #' @description
+    #' Create a select list that can be used to choose a single or multiple items from a list of values
+    #'
+    #' @param choices List of values to select from
+    #' @param selected The initially selected value (or multiple values if \code{multiple = TRUE}).
+    #' @param multiple Is selection of multiple items allowed?
+    #'
+    #' @return A select list control that can be added to a UI definition
+    #'
+    #' @seealso selectCLInput
+    selectInput = function(input_id, label, choices, selected = NULL, multiple = FALSE, inline = FALSE) {
+      self$almondInput(
+        super$selectInput(input_id, label, choices, selected = selected, multiple = multiple),
+        inline
+      )
     },
 
     #' Convert Classless Input to Almond.css Input

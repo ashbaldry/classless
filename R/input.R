@@ -7,7 +7,7 @@
 #' Classless frameworks a lot less feature rich compared to
 #'
 #' @param input_id The \code{input} slot that will be used to access the value.
-#' @param label Display label for the contro
+#' @param label Display label for the control
 #' @param value Initial value
 #' @param placeholder A character string giving the user a hint as to what can be entered into the control
 #'
@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' # Text Input
-#' textCLInput(input_id = "text", "Text Input)
+#' textCLInput(input_id = "text", "Text Input")
 #'
 #' # Numeric Input
 #' numericCLInput(input_id = "numeric", "Numeric Input")

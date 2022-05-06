@@ -20,13 +20,18 @@ Classless <- R6::R6Class(
     #' @param framework Name of the framework
     #'
     #' @return A new \code{Classless} object
-    initialize = function(framework) private$framework <- framework,
+    initialize = function(framework) {
+      private$framework <- framework
+      NULL
+    },
 
     #' @description
     #' Get the name of the selected classless framework
     #'
     #' @return The name of the framework
-    getFramework = function() private$framework,
+    getFramework = function() {
+      private$framework
+    },
 
     #' @description
     #' Method required to create a UI page with the required framework
@@ -39,19 +44,69 @@ Classless <- R6::R6Class(
     },
 
     #' @description
+    #' Set UI Code
+    #'
+    #' @param ui UI code
+    addUI = function(ui) {
+      private$ui <- self$createPage(ui)
+      NULL
+    },
+
+    #' @description
+    #' Get UI code
+    getUI = function() {
+      private$ui
+    },
+
+    #' @description
+    #' Set server function
+    #'
+    #' @param fun Server function
+    addServer = function(fun) {
+      private$server <- fun
+      NULL
+    },
+
+    #' @description
+    #' Get server function
+    getServer = function() {
+      private$server
+    },
+
+    #' @description
+    #' Run shiny application
+    #'
+    #' @param ... Arguments passed to \code{\link[shiny]{shinyApp}}
+    runApp = function(...) {
+      if (is.null(private$ui) || is.null(private$server)) {
+        stop("ui and server functions have not been included yet, please add before running application.")
+      }
+
+      shiny::shinyApp(
+        ui = private$ui,
+        server = private$server,
+        ...
+      )
+    },
+
+    #' @description
     #' Run an example application, showing off components available in the classless framework
+    #'
+    #' See \code{\link{runClasslessExample}} for more details
     #'
     #' @param ... Arguments to passed to \code{\link[shiny]{shinyApp}}
     #'
     #' @return A shiny application with example components
-    runExample = \(...) runClasslessExample(framework = self$clone(), ...),
+    runExample = function(...) {
+      runClasslessExample(framework = self$clone(), ...)
+    },
 
     #' @description
     #' Create an input control for entry of unstructured text values
     #'
     #' @return A text input control that can be added to a UI definition
     textInput = function(input_id, label, value = "", placeholder = "") {
-      textCLInput(input_id, label, value, placeholder)
+      textCLInput(input_id, label, value = value, placeholder = placeholder)
     },
 
     #' @description
@@ -59,7 +114,7 @@ Classless <- R6::R6Class(
     #'
     #' @return A password input control that can be added to a UI definition
     passwordInput = function(input_id, label, value = "", placeholder = "") {
-      passwordCLInput(input_id, label, value, placeholder)
+      passwordCLInput(input_id, label, value = value, placeholder = placeholder)
     },
 
     #' @description
@@ -67,7 +122,7 @@ Classless <- R6::R6Class(
     #'
     #' @return A textarea input control that can be added to a UI definition
     textAreaInput = function(input_id, label, value = "", placeholder = "") {
-      textAreaCLInput(input_id, label, value, placeholder)
+      textAreaCLInput(input_id, label, value = value, placeholder = placeholder)
     },
 
     #' @description
@@ -75,7 +130,7 @@ Classless <- R6::R6Class(
     #'
     #' @return A numeric input control that can be added to a UI definition
     numericInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "") {
-      numericCLInput(input_id, label, value, min, max, placeholder)
+      numericCLInput(input_id, label, value = value, min = min, max = max, placeholder = placeholder)
     },
 
     #' @description
@@ -83,11 +138,25 @@ Classless <- R6::R6Class(
     #'
     #' @return A date input control that can be added to a UI definition
     dateInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "") {
-      dateCLInput(input_id, label, value, min, max, placeholder)
+      dateCLInput(input_id, label, value = value, min = min, max = max, placeholder = placeholder)
+    },
+
+    #' @description
+    #' Create a select list that can be used to choose a single or multiple items from a list of values
+    #'
+    #' @param choices List of values to select from
+    #' @param selected The initially selected value (or multiple values if \code{multiple = TRUE}).
+    #' @param multiple Is selection of multiple items allowed?
+    #'
+    #' @return A select list control that can be added to a UI definition
+    selectInput = function(input_id, label, choices, selected = NULL, multiple = FALSE) {
+      selectCLInput(input_id, label, choices, selected = selected, multiple = multiple)
     }
   ),
 
   private = list(
-    framework = NULL
+    framework = NULL,
+    ui = NULL,
+    server = NULL
   )
 )
