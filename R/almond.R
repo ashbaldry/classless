@@ -29,13 +29,14 @@
 #'
 #' @export
 almondPage <- function(..., title = NULL, lang = NULL) {
-  if (is.null(title)) {
-    title_tag <- tags$head()
-  } else {
-    title_tag <- tags$head(tags$title(title))
-  }
+  ui <- tagList(
+    tags$head(
+      tags$title(title),
+      tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+    ),
+    ...
+  )
 
-  ui <- tagList(title_tag, ...)
   ui <- htmltools::attachDependencies(
     ui,
     list(almondTheme(), classlessDependency())

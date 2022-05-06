@@ -34,13 +34,14 @@
 #'
 #' @export
 sakuraPage <- function(..., title = NULL, theme = NULL, lang = NULL) {
-  if (is.null(title)) {
-    title_tag <- NULL
-  } else {
-    title_tag <- tags$head(tags$title(title))
-  }
+  ui <- tagList(
+    tags$head(
+      tags$title(title),
+      tags$meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
+    ),
+    ...
+  )
 
-  ui <- tagList(title_tag, ...)
   ui <- htmltools::attachDependencies(
     ui,
     list(sakuraTheme(theme), classlessDependency())

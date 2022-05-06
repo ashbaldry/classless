@@ -41,6 +41,7 @@ classlessPage <- function(..., title = NULL, theme = NULL, lang = NULL) {
     ),
     ...
   )
+
   ui <- htmltools::attachDependencies(
     ui,
     list(classlessTheme(theme), classlessDependency())
