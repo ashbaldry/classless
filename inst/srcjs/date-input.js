@@ -14,11 +14,17 @@ $.extend(classlessDateBinding, {
   },
   subscribe: function(el, callback) {
     $(el).on("change.classlessDateBinding", function(e) {
-      callback(false);
+      callback(true);
     });
   },
   unsubscribe: function(el) {
     $(el).off(".classlessDateBinding");
+  },
+  getRatePolicy: function(el) {
+    return {
+      policy: "debounce",
+      delay: 250
+    };
   }
 });
 

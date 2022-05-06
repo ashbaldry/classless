@@ -8,6 +8,9 @@ A ...
 }
 \seealso{
 \code{\link{sakuraPage}}, \code{\link{listSakuraThemes}}
+
+selectCLInput
+Convert Classless Input to sakura.css Input
 }
 \section{Super class}{
 \code{\link[classless:Classless]{classless::Classless}} -> \code{SakuraCSS}
@@ -22,14 +25,20 @@ A ...
 \item \href{#method-textAreaInput}{\code{SakuraCSS$textAreaInput()}}
 \item \href{#method-numericInput}{\code{SakuraCSS$numericInput()}}
 \item \href{#method-dateInput}{\code{SakuraCSS$dateInput()}}
+\item \href{#method-selectInput}{\code{SakuraCSS$selectInput()}}
 \item \href{#method-sakuraInput}{\code{SakuraCSS$sakuraInput()}}
 \item \href{#method-clone}{\code{SakuraCSS$clone()}}
 }
 }
 \if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
+\out{<details ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addServer">}\href{../../classless/html/Classless.html#method-addServer}{\code{classless::Classless$addServer()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addUI">}\href{../../classless/html/Classless.html#method-addUI}{\code{classless::Classless$addUI()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getFramework">}\href{../../classless/html/Classless.html#method-getFramework}{\code{classless::Classless$getFramework()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getServer">}\href{../../classless/html/Classless.html#method-getServer}{\code{classless::Classless$getServer()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getUI">}\href{../../classless/html/Classless.html#method-getUI}{\code{classless::Classless$getUI()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="runApp">}\href{../../classless/html/Classless.html#method-runApp}{\code{classless::Classless$runApp()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="runExample">}\href{../../classless/html/Classless.html#method-runExample}{\code{classless::Classless$runExample()}}\out{</span>}
 }
 \out{</details>}
@@ -220,7 +229,40 @@ Create a date input control for entry of unstructured text values
 }
 \subsection{Returns}{
 A date input control that can be added to a UI definition
-Convert Classless Input to sakura.css Input
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-selectInput"></a>}}
+\if{latex}{\out{\hypertarget{method-selectInput}{}}}
+\subsection{Method \code{selectInput()}}{
+Create a select list that can be used to choose a single or multiple items from a list of values
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SakuraCSS$selectInput(
+  input_id,
+  label,
+  choices,
+  selected = NULL,
+  multiple = FALSE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input_id}}{The \code{input} slot that will be used to access the value.}
+
+\item{\code{label}}{Display label for the control}
+
+\item{\code{choices}}{List of values to select from}
+
+\item{\code{selected}}{The initially selected value (or multiple values if \code{multiple = TRUE}).}
+
+\item{\code{multiple}}{Is selection of multiple items allowed?}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A select list control that can be added to a UI definition
 }
 }
 \if{html}{\out{<hr>}}

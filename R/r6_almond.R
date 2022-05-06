@@ -7,6 +7,7 @@
 #' @param label Display label for the control
 #' @param value Initial value
 #' @param placeholder A character string giving the user a hint as to what can be entered into the control
+#' @param inline Logical, whether the component is in-line with sibling elements
 #' @param min Minimum valid value
 #' @param max Maximum valid value
 #'
@@ -70,40 +71,56 @@ AlmondCSS <- R6::R6Class(
     #' Create an input control for entry of unstructured text values
     #'
     #' @return A text input control that can be added to a UI definition
-    textInput = function(input_id, label, value = "", placeholder = "") {
-      self$almondInput(textCLInput(input_id, label, value, placeholder))
+    textInput = function(input_id, label, value = "", placeholder = "", inline = FALSE) {
+      self$almondInput(
+        super$textInput(input_id, label, value = value, placeholder = placeholder),
+        inline
+      )
     },
 
     #' @description
     #' Create an password control for entry of passwords
     #'
     #' @return A password input control that can be added to a UI definition
-    passwordInput = function(input_id, label, value = "", placeholder = "") {
-      self$almondInput(passwordCLInput(input_id, label, value, placeholder))
+    passwordInput = function(input_id, label, value = "", placeholder = "", inline = FALSE) {
+      self$almondInput(
+        super$passwordInput(input_id, label, value = value, placeholder = placeholder),
+        inline
+      )
     },
 
     #' @description
     #' Create a textarea input control for entry of unstructured text values
     #'
     #' @return A textarea input control that can be added to a UI definition
-    textAreaInput = function(input_id, label, value = "", placeholder = "") {
-      self$almondInput(textAreaCLInput(input_id, label, value, placeholder))
+    textAreaInput = function(input_id, label, value = "", placeholder = "", inline = FALSE) {
+      self$almondInput(
+        super$textAreaInput(input_id, label, value = value, placeholder = placeholder),
+        inline
+      )
     },
 
     #' @description
     #' Create a numeric input control for entry of unstructured text values
     #'
     #' @return A numeric input control that can be added to a UI definition
-    numericInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "") {
-      self$almondInput(numericCLInput(input_id, label, value, min, max, placeholder))
+    numericInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "", inline = FALSE) {
+      self$almondInput(
+        super$numericInput(input_id, label, value = value, min = min, max = max, placeholder = placeholder),
+        inline
+      )
     },
 
     #' @description
     #' Create a date input control for entry of unstructured text values
     #'
     #' @return A date input control that can be added to a UI definition
-    dateInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "") {
-      self$almondInput(dateCLInput(input_id, label, value, min, max, placeholder))
+    dateInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "", inline = FALSE) {
+      self$almondInput(
+        super$dateInput(input_id, label, value = value, min = min, max = max, placeholder = placeholder),
+        inline
+      )
+    },
     },
 
     #' Convert Classless Input to Almond.css Input
@@ -112,7 +129,9 @@ AlmondCSS <- R6::R6Class(
     #' Almond.css adds a couple of tags to inputs that some classless inputs don't have
     #'
     #' @param input Some UI input
-    almondInput = function(input) {
+    almondInput = function(input, inline = FALSE) {
+      if (inline) return(input)
+
       ui <- tagList(append(input, list(tags$br()), 1))
       tags$p(ui)
     }

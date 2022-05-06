@@ -12,12 +12,18 @@ XxX
 \item \href{#method-new}{\code{Classless$new()}}
 \item \href{#method-getFramework}{\code{Classless$getFramework()}}
 \item \href{#method-createPage}{\code{Classless$createPage()}}
+\item \href{#method-addUI}{\code{Classless$addUI()}}
+\item \href{#method-getUI}{\code{Classless$getUI()}}
+\item \href{#method-addServer}{\code{Classless$addServer()}}
+\item \href{#method-getServer}{\code{Classless$getServer()}}
+\item \href{#method-runApp}{\code{Classless$runApp()}}
 \item \href{#method-runExample}{\code{Classless$runExample()}}
 \item \href{#method-textInput}{\code{Classless$textInput()}}
 \item \href{#method-passwordInput}{\code{Classless$passwordInput()}}
 \item \href{#method-textAreaInput}{\code{Classless$textAreaInput()}}
 \item \href{#method-numericInput}{\code{Classless$numericInput()}}
 \item \href{#method-dateInput}{\code{Classless$dateInput()}}
+\item \href{#method-selectInput}{\code{Classless$selectInput()}}
 \item \href{#method-clone}{\code{Classless$clone()}}
 }
 }
@@ -74,10 +80,83 @@ By default this method is not available and must be created in the extended R6 c
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addUI"></a>}}
+\if{latex}{\out{\hypertarget{method-addUI}{}}}
+\subsection{Method \code{addUI()}}{
+Set UI Code
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$addUI(ui)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{ui}}{UI code}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getUI"></a>}}
+\if{latex}{\out{\hypertarget{method-getUI}{}}}
+\subsection{Method \code{getUI()}}{
+Get UI code
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$getUI()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addServer"></a>}}
+\if{latex}{\out{\hypertarget{method-addServer}{}}}
+\subsection{Method \code{addServer()}}{
+Set server function
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$addServer(fun)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fun}}{Server function}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getServer"></a>}}
+\if{latex}{\out{\hypertarget{method-getServer}{}}}
+\subsection{Method \code{getServer()}}{
+Get server function
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$getServer()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-runApp"></a>}}
+\if{latex}{\out{\hypertarget{method-runApp}{}}}
+\subsection{Method \code{runApp()}}{
+Run shiny application
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$runApp(...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Arguments passed to \code{\link[shiny]{shinyApp}}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-runExample"></a>}}
 \if{latex}{\out{\hypertarget{method-runExample}{}}}
 \subsection{Method \code{runExample()}}{
 Run an example application, showing off components available in the classless framework
+
+See \code{\link{runClasslessExample}} for more details
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Classless$runExample(...)}\if{html}{\out{</div>}}
 }
@@ -243,6 +322,40 @@ Create a date input control for entry of unstructured text values
 }
 \subsection{Returns}{
 A date input control that can be added to a UI definition
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-selectInput"></a>}}
+\if{latex}{\out{\hypertarget{method-selectInput}{}}}
+\subsection{Method \code{selectInput()}}{
+Create a select list that can be used to choose a single or multiple items from a list of values
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$selectInput(
+  input_id,
+  label,
+  choices,
+  selected = NULL,
+  multiple = FALSE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input_id}}{The \code{input} slot that will be used to access the value.}
+
+\item{\code{label}}{Display label for the control}
+
+\item{\code{choices}}{List of values to select from}
+
+\item{\code{selected}}{The initially selected value (or multiple values if \code{multiple = TRUE}).}
+
+\item{\code{multiple}}{Is selection of multiple items allowed?}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A select list control that can be added to a UI definition
 }
 }
 \if{html}{\out{<hr>}}

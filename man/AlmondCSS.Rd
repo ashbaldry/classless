@@ -42,6 +42,9 @@ if (interactive()) {
 }
 \seealso{
 \code{\link{almondPage}}
+
+selectCLInput
+Convert Classless Input to Almond.css Input
 }
 \section{Super class}{
 \code{\link[classless:Classless]{classless::Classless}} -> \code{AlmondCSS}
@@ -56,14 +59,20 @@ if (interactive()) {
 \item \href{#method-textAreaInput}{\code{AlmondCSS$textAreaInput()}}
 \item \href{#method-numericInput}{\code{AlmondCSS$numericInput()}}
 \item \href{#method-dateInput}{\code{AlmondCSS$dateInput()}}
+\item \href{#method-selectInput}{\code{AlmondCSS$selectInput()}}
 \item \href{#method-almondInput}{\code{AlmondCSS$almondInput()}}
 \item \href{#method-clone}{\code{AlmondCSS$clone()}}
 }
 }
 \if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
+\out{<details ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addServer">}\href{../../classless/html/Classless.html#method-addServer}{\code{classless::Classless$addServer()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addUI">}\href{../../classless/html/Classless.html#method-addUI}{\code{classless::Classless$addUI()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getFramework">}\href{../../classless/html/Classless.html#method-getFramework}{\code{classless::Classless$getFramework()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getServer">}\href{../../classless/html/Classless.html#method-getServer}{\code{classless::Classless$getServer()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getUI">}\href{../../classless/html/Classless.html#method-getUI}{\code{classless::Classless$getUI()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="runApp">}\href{../../classless/html/Classless.html#method-runApp}{\code{classless::Classless$runApp()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="runExample">}\href{../../classless/html/Classless.html#method-runExample}{\code{classless::Classless$runExample()}}\out{</span>}
 }
 \out{</details>}
@@ -108,7 +117,13 @@ Create a page with Almond.CSS
 \subsection{Method \code{textInput()}}{
 Create an input control for entry of unstructured text values
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$textInput(input_id, label, value = "", placeholder = "")}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$textInput(
+  input_id,
+  label,
+  value = "",
+  placeholder = "",
+  inline = FALSE
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -121,6 +136,8 @@ Create an input control for entry of unstructured text values
 \item{\code{value}}{Initial value}
 
 \item{\code{placeholder}}{A character string giving the user a hint as to what can be entered into the control}
+
+\item{\code{inline}}{Logical, whether the component is in-line with sibling elements}
 }
 \if{html}{\out{</div>}}
 }
@@ -134,7 +151,13 @@ A text input control that can be added to a UI definition
 \subsection{Method \code{passwordInput()}}{
 Create an password control for entry of passwords
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$passwordInput(input_id, label, value = "", placeholder = "")}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$passwordInput(
+  input_id,
+  label,
+  value = "",
+  placeholder = "",
+  inline = FALSE
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -147,6 +170,8 @@ Create an password control for entry of passwords
 \item{\code{value}}{Initial value}
 
 \item{\code{placeholder}}{A character string giving the user a hint as to what can be entered into the control}
+
+\item{\code{inline}}{Logical, whether the component is in-line with sibling elements}
 }
 \if{html}{\out{</div>}}
 }
@@ -160,7 +185,13 @@ A password input control that can be added to a UI definition
 \subsection{Method \code{textAreaInput()}}{
 Create a textarea input control for entry of unstructured text values
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$textAreaInput(input_id, label, value = "", placeholder = "")}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$textAreaInput(
+  input_id,
+  label,
+  value = "",
+  placeholder = "",
+  inline = FALSE
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -173,6 +204,8 @@ Create a textarea input control for entry of unstructured text values
 \item{\code{value}}{Initial value}
 
 \item{\code{placeholder}}{A character string giving the user a hint as to what can be entered into the control}
+
+\item{\code{inline}}{Logical, whether the component is in-line with sibling elements}
 }
 \if{html}{\out{</div>}}
 }
@@ -192,7 +225,8 @@ Create a numeric input control for entry of unstructured text values
   value = "",
   min = NULL,
   max = NULL,
-  placeholder = ""
+  placeholder = "",
+  inline = FALSE
 )}\if{html}{\out{</div>}}
 }
 
@@ -210,6 +244,8 @@ Create a numeric input control for entry of unstructured text values
 \item{\code{max}}{Maximum valid value}
 
 \item{\code{placeholder}}{A character string giving the user a hint as to what can be entered into the control}
+
+\item{\code{inline}}{Logical, whether the component is in-line with sibling elements}
 }
 \if{html}{\out{</div>}}
 }
@@ -229,7 +265,8 @@ Create a date input control for entry of unstructured text values
   value = "",
   min = NULL,
   max = NULL,
-  placeholder = ""
+  placeholder = "",
+  inline = FALSE
 )}\if{html}{\out{</div>}}
 }
 
@@ -247,12 +284,50 @@ Create a date input control for entry of unstructured text values
 \item{\code{max}}{Maximum valid value}
 
 \item{\code{placeholder}}{A character string giving the user a hint as to what can be entered into the control}
+
+\item{\code{inline}}{Logical, whether the component is in-line with sibling elements}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
 A date input control that can be added to a UI definition
-Convert Classless Input to Almond.css Input
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-selectInput"></a>}}
+\if{latex}{\out{\hypertarget{method-selectInput}{}}}
+\subsection{Method \code{selectInput()}}{
+Create a select list that can be used to choose a single or multiple items from a list of values
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$selectInput(
+  input_id,
+  label,
+  choices,
+  selected = NULL,
+  multiple = FALSE,
+  inline = FALSE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input_id}}{The \code{input} slot that will be used to access the value.}
+
+\item{\code{label}}{Display label for the control}
+
+\item{\code{choices}}{List of values to select from}
+
+\item{\code{selected}}{The initially selected value (or multiple values if \code{multiple = TRUE}).}
+
+\item{\code{multiple}}{Is selection of multiple items allowed?}
+
+\item{\code{inline}}{Logical, whether the component is in-line with sibling elements}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A select list control that can be added to a UI definition
 }
 }
 \if{html}{\out{<hr>}}
@@ -261,13 +336,15 @@ Convert Classless Input to Almond.css Input
 \subsection{Method \code{almondInput()}}{
 Almond.css adds a couple of tags to inputs that some classless inputs don't have
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$almondInput(input)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{AlmondCSS$almondInput(input, inline = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{input}}{Some UI input}
+
+\item{\code{inline}}{Logical, whether the component is in-line with sibling elements}
 }
 \if{html}{\out{</div>}}
 }

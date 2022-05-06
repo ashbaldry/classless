@@ -25,11 +25,17 @@ Classless.CSS
 \if{html}{
 \out{<details ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addServer">}\href{../../classless/html/Classless.html#method-addServer}{\code{classless::Classless$addServer()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addUI">}\href{../../classless/html/Classless.html#method-addUI}{\code{classless::Classless$addUI()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="dateInput">}\href{../../classless/html/Classless.html#method-dateInput}{\code{classless::Classless$dateInput()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getFramework">}\href{../../classless/html/Classless.html#method-getFramework}{\code{classless::Classless$getFramework()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getServer">}\href{../../classless/html/Classless.html#method-getServer}{\code{classless::Classless$getServer()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getUI">}\href{../../classless/html/Classless.html#method-getUI}{\code{classless::Classless$getUI()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="numericInput">}\href{../../classless/html/Classless.html#method-numericInput}{\code{classless::Classless$numericInput()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="passwordInput">}\href{../../classless/html/Classless.html#method-passwordInput}{\code{classless::Classless$passwordInput()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="runApp">}\href{../../classless/html/Classless.html#method-runApp}{\code{classless::Classless$runApp()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="runExample">}\href{../../classless/html/Classless.html#method-runExample}{\code{classless::Classless$runExample()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="selectInput">}\href{../../classless/html/Classless.html#method-selectInput}{\code{classless::Classless$selectInput()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="textAreaInput">}\href{../../classless/html/Classless.html#method-textAreaInput}{\code{classless::Classless$textAreaInput()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="textInput">}\href{../../classless/html/Classless.html#method-textInput}{\code{classless::Classless$textInput()}}\out{</span>}
 }

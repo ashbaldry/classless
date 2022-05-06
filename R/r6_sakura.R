@@ -40,7 +40,9 @@ SakuraCSS <- R6::R6Class(
     #'
     #' @return A text input control that can be added to a UI definition
     textInput = function(input_id, label, value = "", placeholder = "") {
-      self$sakuraInput(textCLInput(input_id, label, value, placeholder))
+      self$sakuraInput(
+        super$textInput(input_id, label, value = value, placeholder = placeholder)
+      )
     },
 
     #' @description
@@ -48,7 +50,9 @@ SakuraCSS <- R6::R6Class(
     #'
     #' @return A password input control that can be added to a UI definition
     passwordInput = function(input_id, label, value = "", placeholder = "") {
-      self$sakuraInput(passwordCLInput(input_id, label, value, placeholder))
+      self$sakuraInput(
+        super$passwordInput(input_id, label, value = value, placeholder = placeholder)
+      )
     },
 
     #' @description
@@ -56,7 +60,9 @@ SakuraCSS <- R6::R6Class(
     #'
     #' @return A textarea input control that can be added to a UI definition
     textAreaInput = function(input_id, label, value = "", placeholder = "") {
-      self$sakuraInput(textAreaCLInput(input_id, label, value, placeholder))
+      self$sakuraInput(
+        super$textAreaInput(input_id, label, value = value, placeholder = placeholder)
+      )
     },
 
     #' @description
@@ -64,7 +70,9 @@ SakuraCSS <- R6::R6Class(
     #'
     #' @return A numeric input control that can be added to a UI definition
     numericInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "") {
-      self$sakuraInput(numericCLInput(input_id, label, value, min, max, placeholder))
+      self$sakuraInput(
+        super$numericInput(input_id, label, value = value, min = min, max = max, placeholder = placeholder)
+      )
     },
 
     #' @description
@@ -72,7 +80,10 @@ SakuraCSS <- R6::R6Class(
     #'
     #' @return A date input control that can be added to a UI definition
     dateInput = function(input_id, label, value = "", min = NULL, max = NULL, placeholder = "") {
-      self$sakuraInput(dateCLInput(input_id, label, value, min, max, placeholder))
+      self$sakuraInput(
+        super$dateInput(input_id, label, value = value, min = min, max = max, placeholder = placeholder)
+      )
+    },
     },
 
     #' Convert Classless Input to sakura.css Input

@@ -35,7 +35,7 @@ dateCLInput(
 \arguments{
 \item{input_id}{The \code{input} slot that will be used to access the value.}
 
-\item{label}{Display label for the contro}
+\item{label}{Display label for the control}
 
 \item{value}{Initial value}
 
@@ -53,4 +53,15 @@ As most classless frameworks focus on HTML tags rather than CSS classes, the for
 consistent amongst different frameworks.
 
 Classless frameworks a lot less feature rich compared to
+}
+\examples{
+# Text Input
+textCLInput(input_id = "text", "Text Input")
+
+# Numeric Input
+numericCLInput(input_id = "numeric", "Numeric Input")
+
+# Date Input
+dateCLInput(input_id = "date", "Date Input")
+
 }
