@@ -60,27 +60,56 @@ exampleUI <- function(framework) {
     tags$main(
       tags$section(
         tags$h2("Typeography"),
-
+        tags$section(
+          tags$section("Block and Inline Eleemtns")
+        ),
+        tags$section(
+          tags$h3("Headings"),
+          tags$h1("Heading Level 1"),
+          tags$h2("Heading Level 2"),
+          tags$h3("Heading Level 3"),
+          tags$h4("Heading Level 4"),
+          tags$h5("Heading Level 5"),
+          tags$h6("Heading Level 6")
+        )
       ),
 
       tags$section(
         tags$h2("Inputs"),
         tags$form(
-          framework$textInput("text", "Text Input"),
-          framework$numericInput("number", "Numeric Input"),
-          framework$passwordInput("password", "Password Input"),
-          framework$dateInput("date", "Date Input"),
-          framework$textAreaInput("textarea", "Text Area Input")
-        ),
-
-        tags$aside(
-          tags$h3("Input values:"),
-          tags$ul(
-            tags$li("Text:", textOutput("text", inline = TRUE)),
-            tags$li("Number:", textOutput("number", inline = TRUE)),
-            tags$li("Password:", textOutput("password", inline = TRUE)),
-            tags$li("Date:", textOutput("date", inline = TRUE)),
-            tags$li("Text Area:", textOutput("textarea", inline = TRUE))
+          tags$aside(
+            tags$h3("Input values:"),
+            tags$ul(
+              tags$li("Text:", textOutput("text", inline = TRUE)),
+              tags$li("Number:", textOutput("number", inline = TRUE)),
+              tags$li("Password:", textOutput("password", inline = TRUE)),
+              tags$li("Date:", textOutput("date", inline = TRUE)),
+              tags$li("Text Area:", textOutput("textarea", inline = TRUE)),
+              tags$li("Button:", textOutput("button", inline = TRUE))
+            )
+          ),
+          tags$fieldset(
+            tags$legend("Input Fields"),
+            framework$textInput("text", "Text Input"),
+            framework$numericInput("number", "Numeric Input"),
+            framework$passwordInput("password", "Password Input"),
+            framework$dateInput("date", "Date Input"),
+            framework$textAreaInput("textarea", "Text Area Input")
+          ),
+          tags$aside(
+            tags$ul(
+            )
+          ),
+          tags$fieldset(
+            tags$legend("Checkboxes and Radio Buttons")
+          ),
+          tags$aside(
+            tags$ul(
+            )
+          ),
+          tags$fieldset(
+            tags$legend("Buttons"),
+            framework$actionButton("button", "Action Button")
           )
         )
       ),
@@ -106,4 +135,5 @@ exampleServer <- function(input, output) {
   output$password <- renderText(input$password)
   output$date <- renderText(as.character(input$date))
   output$textarea <- renderText(input$textarea)
+  output$button <- renderText(input$button)
 }

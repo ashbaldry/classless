@@ -24,6 +24,7 @@ XxX
 \item \href{#method-numericInput}{\code{Classless$numericInput()}}
 \item \href{#method-dateInput}{\code{Classless$dateInput()}}
 \item \href{#method-selectInput}{\code{Classless$selectInput()}}
+\item \href{#method-actionButton}{\code{Classless$actionButton()}}
 \item \href{#method-clone}{\code{Classless$clone()}}
 }
 }
@@ -356,6 +357,30 @@ Create a select list that can be used to choose a single or multiple items from 
 }
 \subsection{Returns}{
 A select list control that can be added to a UI definition
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-actionButton"></a>}}
+\if{latex}{\out{\hypertarget{method-actionButton}{}}}
+\subsection{Method \code{actionButton()}}{
+Creates an action button whose value is initially zero, and increments by one each time it is pressed.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$actionButton(input_id, label, ...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input_id}}{The \code{input} slot that will be used to access the value.}
+
+\item{\code{label}}{Display label for the control}
+
+\item{\code{...}}{Named attributes to be applied to the button or link.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Abutton control that can be added to a UI definition
 }
 }
 \if{html}{\out{<hr>}}

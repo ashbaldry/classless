@@ -67,6 +67,7 @@ Convert Classless Input to Almond.css Input
 \if{html}{
 \out{<details ><summary>Inherited methods</summary>}
 \itemize{
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="actionButton">}\href{../../classless/html/Classless.html#method-actionButton}{\code{classless::Classless$actionButton()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addServer">}\href{../../classless/html/Classless.html#method-addServer}{\code{classless::Classless$addServer()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addUI">}\href{../../classless/html/Classless.html#method-addUI}{\code{classless::Classless$addUI()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getFramework">}\href{../../classless/html/Classless.html#method-getFramework}{\code{classless::Classless$getFramework()}}\out{</span>}

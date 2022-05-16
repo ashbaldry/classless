@@ -151,6 +151,16 @@ Classless <- R6::R6Class(
     #' @return A select list control that can be added to a UI definition
     selectInput = function(input_id, label, choices, selected = NULL, multiple = FALSE) {
       selectCLInput(input_id, label, choices, selected = selected, multiple = multiple)
+    },
+
+    #' @description
+    #' Creates an action button whose value is initially zero, and increments by one each time it is pressed.
+    #'
+    #' @param ... Named attributes to be applied to the button or link.
+    #'
+    #' @return Abutton control that can be added to a UI definition
+    actionButton = function(input_id, label, ...) {
+      actionCLButton(input_id, label, ...)
     }
   ),
 
