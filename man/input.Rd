@@ -6,6 +6,7 @@
 \alias{textAreaCLInput}
 \alias{numericCLInput}
 \alias{dateCLInput}
+\alias{checkboxCLInput}
 \title{Inputs for Classless CSS Frameworks}
 \usage{
 textCLInput(input_id, label, value = "", placeholder = "")
@@ -31,6 +32,8 @@ dateCLInput(
   max = NULL,
   placeholder = ""
 )
+
+checkboxCLInput(input_id, label, value = FALSE)
 }
 \arguments{
 \item{input_id}{The \code{input} slot that will be used to access the value.}

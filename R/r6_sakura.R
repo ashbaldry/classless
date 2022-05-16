@@ -86,6 +86,17 @@ SakuraCSS <- R6::R6Class(
     },
 
     #' @description
+    #' Create a checkbox that can be used to specify logical values
+    #'
+    #' @return A checkbox control that can be added to a UI definition
+    checkboxInput = function(input_id, label, value = FALSE) {
+      ui <- checkboxCLInput(input_id, label, value = value)
+      checkbox <- ui[[2]]
+      checkbox$children <- append(checkbox$children, ui[1], after = 0)
+      checkbox
+    },
+
+    #' @description
     #' Create a select list that can be used to choose a single or multiple items from a list of values
     #'
     #' @param choices List of values to select from

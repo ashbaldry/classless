@@ -84,8 +84,7 @@ exampleUI <- function(framework) {
               tags$li("Number:", textOutput("number", inline = TRUE)),
               tags$li("Password:", textOutput("password", inline = TRUE)),
               tags$li("Date:", textOutput("date", inline = TRUE)),
-              tags$li("Text Area:", textOutput("textarea", inline = TRUE)),
-              tags$li("Button:", textOutput("button", inline = TRUE))
+              tags$li("Text Area:", textOutput("textarea", inline = TRUE))
             )
           ),
           tags$fieldset(
@@ -98,13 +97,16 @@ exampleUI <- function(framework) {
           ),
           tags$aside(
             tags$ul(
+              tags$li("Single Checkbox:", textOutput("checkbox", inline = TRUE))
             )
           ),
           tags$fieldset(
-            tags$legend("Checkboxes and Radio Buttons")
+            tags$legend("Checkboxes and Radio Buttons"),
+            framework$checkboxInput("checkbox", "Checkbox Input")
           ),
           tags$aside(
             tags$ul(
+              tags$li("Button:", textOutput("button", inline = TRUE))
             )
           ),
           tags$fieldset(
@@ -135,5 +137,6 @@ exampleServer <- function(input, output) {
   output$password <- renderText(input$password)
   output$date <- renderText(as.character(input$date))
   output$textarea <- renderText(input$textarea)
+  output$checkbox <- renderText(as.character(input$checkbox))
   output$button <- renderText(input$button)
 }

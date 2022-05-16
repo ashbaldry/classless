@@ -78,3 +78,17 @@ dateCLInput <- function(input_id, label, value = "", min = NULL, max = NULL, pla
     input_tag
   )
 }
+
+#' @rdname input
+#' @export
+checkboxCLInput <- function(input_id, label, value = FALSE) {
+  if (!is.logical(value)) stop("`value` must be TRUE or FALSE")
+
+  input_tag <- tags$input(id = input_id, type = "checkbox")
+  if (isTRUE(value)) input_tag$attribs$checked <- NA
+
+  tagList(
+    input_tag,
+    tags$label("for" = input_id, label),
+  )
+}

@@ -26,6 +26,7 @@ A ...
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="actionButton">}\href{../../classless/html/Classless.html#method-actionButton}{\code{classless::Classless$actionButton()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addServer">}\href{../../classless/html/Classless.html#method-addServer}{\code{classless::Classless$addServer()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="addUI">}\href{../../classless/html/Classless.html#method-addUI}{\code{classless::Classless$addUI()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="checkboxInput">}\href{../../classless/html/Classless.html#method-checkboxInput}{\code{classless::Classless$checkboxInput()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="dateInput">}\href{../../classless/html/Classless.html#method-dateInput}{\code{classless::Classless$dateInput()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getFramework">}\href{../../classless/html/Classless.html#method-getFramework}{\code{classless::Classless$getFramework()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="classless" data-topic="Classless" data-id="getServer">}\href{../../classless/html/Classless.html#method-getServer}{\code{classless::Classless$getServer()}}\out{</span>}

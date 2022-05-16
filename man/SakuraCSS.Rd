@@ -25,6 +25,7 @@ Convert Classless Input to sakura.css Input
 \item \href{#method-textAreaInput}{\code{SakuraCSS$textAreaInput()}}
 \item \href{#method-numericInput}{\code{SakuraCSS$numericInput()}}
 \item \href{#method-dateInput}{\code{SakuraCSS$dateInput()}}
+\item \href{#method-checkboxInput}{\code{SakuraCSS$checkboxInput()}}
 \item \href{#method-selectInput}{\code{SakuraCSS$selectInput()}}
 \item \href{#method-sakuraInput}{\code{SakuraCSS$sakuraInput()}}
 \item \href{#method-clone}{\code{SakuraCSS$clone()}}
@@ -230,6 +231,30 @@ Create a date input control for entry of unstructured text values
 }
 \subsection{Returns}{
 A date input control that can be added to a UI definition
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-checkboxInput"></a>}}
+\if{latex}{\out{\hypertarget{method-checkboxInput}{}}}
+\subsection{Method \code{checkboxInput()}}{
+Create a checkbox that can be used to specify logical values
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SakuraCSS$checkboxInput(input_id, label, value = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input_id}}{The \code{input} slot that will be used to access the value.}
+
+\item{\code{label}}{Display label for the control}
+
+\item{\code{value}}{Initial value}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A checkbox control that can be added to a UI definition
 }
 }
 \if{html}{\out{<hr>}}

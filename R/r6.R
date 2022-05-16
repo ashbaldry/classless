@@ -142,6 +142,14 @@ Classless <- R6::R6Class(
     },
 
     #' @description
+    #' Create a checkbox that can be used to specify logical values
+    #'
+    #' @return A checkbox control that can be added to a UI definition
+    checkboxInput = function(input_id, label, value = FALSE) {
+      checkboxCLInput(input_id, label, value = value)
+    },
+
+    #' @description
     #' Create a select list that can be used to choose a single or multiple items from a list of values
     #'
     #' @param choices List of values to select from

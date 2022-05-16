@@ -23,6 +23,7 @@ XxX
 \item \href{#method-textAreaInput}{\code{Classless$textAreaInput()}}
 \item \href{#method-numericInput}{\code{Classless$numericInput()}}
 \item \href{#method-dateInput}{\code{Classless$dateInput()}}
+\item \href{#method-checkboxInput}{\code{Classless$checkboxInput()}}
 \item \href{#method-selectInput}{\code{Classless$selectInput()}}
 \item \href{#method-actionButton}{\code{Classless$actionButton()}}
 \item \href{#method-clone}{\code{Classless$clone()}}
@@ -323,6 +324,30 @@ Create a date input control for entry of unstructured text values
 }
 \subsection{Returns}{
 A date input control that can be added to a UI definition
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-checkboxInput"></a>}}
+\if{latex}{\out{\hypertarget{method-checkboxInput}{}}}
+\subsection{Method \code{checkboxInput()}}{
+Create a checkbox that can be used to specify logical values
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Classless$checkboxInput(input_id, label, value = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input_id}}{The \code{input} slot that will be used to access the value.}
+
+\item{\code{label}}{Display label for the control}
+
+\item{\code{value}}{Initial value}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A checkbox control that can be added to a UI definition
 }
 }
 \if{html}{\out{<hr>}}
