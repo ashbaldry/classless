@@ -80,11 +80,11 @@ exampleUI <- function(framework) {
           tags$aside(
             tags$h3("Input values:"),
             tags$ul(
-              tags$li("Text:", textOutput("text", inline = TRUE)),
-              tags$li("Number:", textOutput("number", inline = TRUE)),
-              tags$li("Password:", textOutput("password", inline = TRUE)),
-              tags$li("Date:", textOutput("date", inline = TRUE)),
-              tags$li("Text Area:", textOutput("textarea", inline = TRUE))
+              tags$li("Text:", textOutput("text_value", container = tags$output)),
+              tags$li("Number:", textOutput("number_value", container = tags$output)),
+              tags$li("Password:", textOutput("password_value", container = tags$output)),
+              tags$li("Date:", textOutput("date_value", container = tags$output)),
+              tags$li("Text Area:", textOutput("textarea_value", container = tags$output))
             )
           ),
           tags$fieldset(
@@ -97,7 +97,7 @@ exampleUI <- function(framework) {
           ),
           tags$aside(
             tags$ul(
-              tags$li("Single Checkbox:", textOutput("checkbox", inline = TRUE))
+              tags$li("Single Checkbox:", textOutput("checkbox_value", container = tags$output))
             )
           ),
           tags$fieldset(
@@ -106,7 +106,7 @@ exampleUI <- function(framework) {
           ),
           tags$aside(
             tags$ul(
-              tags$li("Button:", textOutput("button", inline = TRUE))
+              tags$li("Button:", textOutput("button_value", container = tags$output))
             )
           ),
           tags$fieldset(
@@ -132,11 +132,11 @@ exampleUI <- function(framework) {
 
 #' @noRd
 exampleServer <- function(input, output) {
-  output$text <- renderText(input$text)
-  output$number <- renderText(input$number)
-  output$password <- renderText(input$password)
-  output$date <- renderText(as.character(input$date))
-  output$textarea <- renderText(input$textarea)
-  output$checkbox <- renderText(as.character(input$checkbox))
-  output$button <- renderText(input$button)
+  output$text_value <- renderText(input$text)
+  output$number_value <- renderText(input$number)
+  output$password_value <- renderText(input$password)
+  output$date_value <- renderText(as.character(input$date))
+  output$textarea_value <- renderText(input$textarea)
+  output$checkbox_value <- renderText(as.character(input$checkbox))
+  output$button_value <- renderText(input$button)
 }
